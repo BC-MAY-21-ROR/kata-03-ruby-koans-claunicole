@@ -14,6 +14,12 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  triangle = [a,b,c]
+
+  raise TriangleError if (triangle[0] + triangle[1] <= triangle[2])
+  raise TriangleError if (triangle[0] + triangle[2] <= triangle[1])
+  raise TriangleError if ( a <= 0 || b <= 0 || c <= 0)
+  
   if (a == b && a == c && b == c) 
     :equilateral 
   elsif (a == b) || (a == c) || (b == c)
